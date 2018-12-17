@@ -59,3 +59,11 @@ func TestCaptchaPatternTwoLeftTwoOperatorOneRightTwoShouldReturnTwoPlusTwo(t *te
 		t.Errorf("Expected %q, But result is %q", expected, result)
 	}
 }
+
+func TestCaptchaPatternTwoLeftOneOperatorTwoRightOneShouldReturnOneMinus1(t *testing.T) {
+	result := Captcha(2, 1, 2, 1)
+	expected := "one - 1"
+	if result != expected {
+		t.Errorf("Expected %q, But result is %q", expected, result)
+	}
+}

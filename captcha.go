@@ -15,10 +15,17 @@ var numbers = map[int]string{
 	9: "nine",
 }
 
+var operators = map[int]string{
+	1: "+",
+	2: "-",
+	3: "*",
+}
+
 func Captcha(pattern, left, operator, right int) string {
 	if pattern == 2 {
 		num := numbers[left]
-		return num + " + " + strconv.Itoa(right)
+		oper := operators[operator]
+		return num + " " + oper + " " + strconv.Itoa(right)
 	} else {
 		num := numbers[right]
 		return strconv.Itoa(left) + " + " + num
