@@ -1,5 +1,7 @@
 package captcha
 
+import "strconv"
+
 var numbers = map[int]string{
 	0: "zero",
 	1: "one",
@@ -16,7 +18,7 @@ var numbers = map[int]string{
 func Captcha(pattern, left, operator, right int) string {
 	if pattern == 2 {
 		num := numbers[left]
-		return num + " + 1"
+		return num + " + " + strconv.Itoa(right)
 	} else {
 		num := numbers[right]
 		return "1 + " + num
