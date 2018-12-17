@@ -21,6 +21,6 @@ func Captcha(pattern, left, operator, right int) string {
 		return num + " + " + strconv.Itoa(right)
 	} else {
 		num := numbers[right]
-		return "1 + " + num
+		return strconv.Itoa(left) + " + " + num
 	}
 }
