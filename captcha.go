@@ -22,12 +22,12 @@ var operators = map[int]string{
 }
 
 func Captcha(pattern, left, operator, right int) string {
+	oper := operators[operator]
 	if pattern == 2 {
 		num := numbers[left]
-		oper := operators[operator]
 		return num + " " + oper + " " + strconv.Itoa(right)
 	}
 	num := numbers[right]
-	return strconv.Itoa(left) + " + " + num
+	return strconv.Itoa(left) + " " + oper + " " + num
 
 }
